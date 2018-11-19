@@ -1,8 +1,0 @@
-<br>
-<p-carousel headerText="Performance by Sector" numVisible="5" [value]="sectors">
-  <ng-template let-sector pTemplate="sector">
-    <div class='sector-name'>{{sector.name}}</div>
-    <div>Last Performance: <span class='sector-performance-values'>{{sector.performance}}</span></div>
-    <div>Performance Date: <span class='sector-performance-values'>{{sector.lastUpdated | date}}</span></div>
-  </ng-template>
-</p-carousel>
