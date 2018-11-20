@@ -1,0 +1,14 @@
+.sector-name {
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.sector-performance-values {
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+.sectorPerformanceCarousel {
+    border: 2px;
+    border-color: black;
+}

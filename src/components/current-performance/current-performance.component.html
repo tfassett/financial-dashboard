@@ -1,0 +1,22 @@
+<h2 style="padding-top:5px;">Last updated {{currentDate | date}}</h2>
+<div class="ui-g">
+  <div class="ui-g-6">
+    <p-carousel headerText="Performance by Sector" numVisible="2" circular="circular" autoplayInterval="5000" [value]="sectors">
+      <ng-template let-sector pTemplate="sector">
+        <div class='sector-name'>{{sector.name}}</div>
+        <div>Last Performance: <span class='sector-performance-values'>{{sector.performance}}</span></div>
+        <div>Performance Date: <span class='sector-performance-values'>{{sector.lastUpdated | date}}</span></div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="ui-g-6">
+    <p-carousel headerText="Latest Earning Reported" numVisible="2" circular="circular" autoplayInterval="5000" [value]="earnings">
+        <ng-template let-earnings pTemplate="earnings">
+          <div class='sector-name'>AT&T</div>
+          <div>Actual Earnings per Share: <span class='sector-performance-values'>{{earnings.actualEPS}}</span></div>
+          <div>Estimated Earnings per Share: <span class='sector-performance-values'>{{earnings.estimatedEPS}}</span></div>
+          <div>Reporting Date: <span class='sector-performance-values'>{{earnings.fiscalEndDate | date}}</span></div>
+        </ng-template>
+      </p-carousel>
+    </div>
+</div>
