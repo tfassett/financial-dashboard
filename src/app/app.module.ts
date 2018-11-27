@@ -13,6 +13,10 @@ import {CarouselModule} from 'primeng/carousel';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SlideMenuModule } from 'cuppa-ng2-slidemenu/cuppa-ng2-slidemenu';
 import {CardModule} from 'primeng/card';
+import {TableModule} from 'primeng/table';
+import { FormsModule } from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,7 @@ import {CardModule} from 'primeng/card';
     HttpClientModule,
     CarouselModule,
     SlideMenuModule,
-    CardModule
+    CardModule,TableModule,FormsModule,InputTextModule,ButtonModule
   ],
   providers: [IextradingService],
   bootstrap: [AppComponent]

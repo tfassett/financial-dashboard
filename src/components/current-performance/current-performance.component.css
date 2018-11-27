@@ -12,3 +12,13 @@
     border: 2px;
     border-color: black;
 }
+.earningsTableHeader {
+    border: 1px solid #e6e6e6;
+    background-color: #f5f5f5;
+}
+.earningsTableRow {
+    border: 1px solid #e6e6e6;
+}
+.stockWidget {
+    border: 1px solid #e6e6e6;
+}

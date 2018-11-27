@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Sector} from  '../components/current-performance/sector';
-import {Earnings} from  '../components/current-performance/earnings';
+import {EarningsForStock} from  '../components/current-performance/earnings';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -16,9 +16,9 @@ export class IextradingService {
     
     return this.http.get<Sector[]>(baseUrl);
   }
-  getEarningsForStock(stock): Observable<Earnings[]> {
+  getEarningsForStock(stock): Observable<EarningsForStock[]> {
     var baseUrl: string = 'https://api.iextrading.com/1.0/stock/' + stock + '/earnings';
     
-    return this.http.get<Earnings[]>(baseUrl);
+    return this.http.get<EarningsForStock[]>(baseUrl);
   }
 }

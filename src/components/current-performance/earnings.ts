@@ -13,3 +13,7 @@ export interface Earnings {
   estimatedChangePercent: number;
   symbolId: number;
 }
+export interface EarningsForStock {
+  symbol: string;
+  earnings: Earnings[];
+}

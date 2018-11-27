@@ -1,22 +1,32 @@
 <h2 style="padding-top:5px;">Last updated {{currentDate | date}}</h2>
 <div class="ui-g">
   <div class="ui-g-6">
-    <p-carousel headerText="Performance by Sector" numVisible="2" circular="circular" autoplayInterval="5000" [value]="sectors">
+    
+    <p-carousel headerText="Performance by Sector from Prior Day" numVisible="2" [value]="sectors">
       <ng-template let-sector pTemplate="sector">
         <div class='sector-name'>{{sector.name}}</div>
-        <div>Last Performance: <span class='sector-performance-values'>{{sector.performance}}</span></div>
+        <div>Last Performance: <span class='sector-performance-values'>{{sector.performance*100 | number:'1.0-2'}}%</span></div>
         <div>Performance Date: <span class='sector-performance-values'>{{sector.lastUpdated | date}}</span></div>
       </ng-template>
     </p-carousel>
   </div>
-  <div class="ui-g-6">
-    <p-carousel headerText="Latest Earning Reported" numVisible="2" circular="circular" autoplayInterval="5000" [value]="earnings">
-        <ng-template let-earnings pTemplate="earnings">
-          <div class='sector-name'>AT&T</div>
-          <div>Actual Earnings per Share: <span class='sector-performance-values'>{{earnings.actualEPS}}</span></div>
-          <div>Estimated Earnings per Share: <span class='sector-performance-values'>{{earnings.estimatedEPS}}</span></div>
-          <div>Reporting Date: <span class='sector-performance-values'>{{earnings.fiscalEndDate | date}}</span></div>
-        </ng-template>
-      </p-carousel>
-    </div>
+  <div class="ui-g-6 stockWidget">
+      <div class='sector-name'><input type="text" pInputText placeholder="Stock Ticker" [(ngModel)]="stockSymbol"/><button pButton type="button" label="Update"  (click)="getEarningsForStock($event)"></button></div>
+        <p-table [value]="earnings.earnings">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Estimated Earnings per Share</th>
+                    <th>Actual Earnings per Share</th>
+                    <th>Reporting Date</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-earnings>
+                <tr>
+                    <td>{{earnings.estimatedEPS}}</td>
+                    <td>{{earnings.actualEPS}}</td>
+                    <td>{{earnings.fiscalEndDate | date}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+      </div>
 </div>
